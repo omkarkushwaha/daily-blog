@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %} {% block content %}
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h2 class="text-center mb-3">
+      <i class="bi bi-person-plus-fill"></i>
+
+      Create Account
+    </h2>
+
+    <p class="text-center text-muted">Join Daily Blog today.</p>
+
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+
+      <button class="btn btn-success w-100 mt-3">Create Account</button>
+    </form>
+
+    <hr />
+
+    <p class="text-center">
+      Already have an account?
+
+      <a href="{% url 'login' %}"> Login </a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
